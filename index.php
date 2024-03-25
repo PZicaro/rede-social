@@ -1,5 +1,7 @@
 <?php
 require('./config.php');
-require('./models/Auth');
+require('./models/Auth.php');
 $auth = new Auth($pdo, $base);
-$auth->checkToken();
+$userInfo = $auth->checkToken();
+
+echo 'Index';

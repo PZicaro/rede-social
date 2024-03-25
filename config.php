@@ -1,5 +1,6 @@
 <?php
-$base = 'http://localhost/devbooks/';
+$base = 'http://localhost/devsbook';
+//atualizar url base no computador de casa
 $db_name = 'devsbook';
 $db_host = 'localhost';
 $db_user ='root';
