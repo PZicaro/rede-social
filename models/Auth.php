@@ -11,7 +11,8 @@ Class Auth{
     }
     function checkToken(){
         $token = $_SESSION['token'];
-        if(!$token){
+        // se der erro nega esse token
+        if($token){
             $userDao = new UserDaoMysql($this->pdo);
             $user = $userDao->findByToken($token);
             if($user){
