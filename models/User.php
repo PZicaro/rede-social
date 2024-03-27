@@ -15,4 +15,4 @@ Class User{
 Interface UserDao {
     public function findByToken($token);
     
-}
+};
