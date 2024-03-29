@@ -11,6 +11,7 @@ if($email && $password){
         exit;
 
     }
+    $_SESSION['flash']= 'Email e/ou Senha estão errados';
     header('Location:'.$base.'/login.php');
     exit;
 }
