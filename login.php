@@ -1,7 +1,5 @@
 <?php
 require('./config.php');
-
-
 ?>
 <!DOCTYPE html>
 <html>
@@ -18,18 +16,16 @@ require('./config.php');
         </div>
     </header>
     <section class="container main">
-        <?php if(!empty($_SESSION['flash'])):?>
-        <?=$_SESSION['flash;'];?>
-        <?=$_SESSION['flash;']='';?>
+        
+        <form method="POST" action="<?=$base?>/login_action.php">
+        <?php if(!empty($_SESSION['flash'])): ?>
+            <?= $_SESSION['flash']='Email e/ou Senha estão errados'; ?>
+            <?php $_SESSION['flash'] = ''; ?> <!-- Limpa a variável após exibi-la -->
         <?php endif; ?>
 
-        <form method="POST" action="<?=$base;?>/login_action.php">
             <input placeholder="Digite seu e-mail" class="input" type="email" name="email" />
-
             <input placeholder="Digite sua senha" class="input" type="password" name="password" />
-
             <input class="button" type="submit" value="Acessar o sistema" />
-
             <a href="<?=$base;?>/signup.php">Ainda não tem conta? Cadastre-se</a>
         </form>
     </section>
