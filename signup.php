@@ -19,9 +19,12 @@ session_start();
     <section class="container main">
         
         <form method="POST" action="<?=$base?>/signup_action.php">
-        
+        <?php if(!empty($_SESSION["flash"])): ?>
+            <?= $_SESSION["flash"];?>
+            <?= $_SESSION["flash"]='';?>
+        <?php endif; ?>
 
-            <input placeholder="Digite seu nome completo" class="input" type="email" name="name" />
+            <input placeholder="Digite seu nome completo" class="input" type="text" name="name" />
             <input placeholder="Digite seu e-mail" class="input" type="email" name="email" />
             <input placeholder="Digite sua senha" class="input" type="password" name="password" />
             <input placeholder="Digite sua data de nascimento" class="input" type="text" name="birthdate" id="birthdate"/>
