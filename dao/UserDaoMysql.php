@@ -43,7 +43,7 @@
     public function findByEmail($email)
     {
         if(!empty($email)){
-            $sql = $this->pdo->prepare("SELECT * FROM user WHERE email =:email");
+            $sql = $this->pdo->prepare("SELECT * FROM users WHERE email =:email");
             $sql->bindValue(':email', $email);
             $sql->execute();
 
