@@ -1,5 +1,6 @@
 <?php
 require('./config.php');
+session_start();
 ?>
 <!DOCTYPE html>
 <html>
@@ -18,9 +19,9 @@ require('./config.php');
     <section class="container main">
         
         <form method="POST" action="<?=$base?>/login_action.php">
-        <?php if(!empty($_SESSION['flash'])): ?>
-            <?= $_SESSION['flash']='Email e/ou Senha estão errados'; ?>
-            <?php $_SESSION['flash'] = ''; ?> <!-- Limpa a variável após exibi-la -->
+        <?php if(!empty($_SESSION["flash"])): ?>
+            <?= $_SESSION["flash"];?>
+            <?= $_SESSION["flash"]='';?>
         <?php endif; ?>
 
             <input placeholder="Digite seu e-mail" class="input" type="email" name="email" />
