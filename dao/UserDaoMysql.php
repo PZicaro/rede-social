@@ -12,7 +12,8 @@
         private function generateUser($array){
             $u = new User();
             $u->id=$array['id'] ?? 0;
-            $u->email = $array['email'] ?? '';
+            $u->email = $array['email'] ?? ''; 
+            $u->password = $array['password'] ?? ''; 
             $u->name = $array['name'] ?? '';
             $u->password = $array['password'] ?? '';
             $u->birthdate = $array['birthdate'] ?? '';
@@ -51,6 +52,7 @@
                 $data = $sql->fetch(PDO::FETCH_ASSOC);
                 $user = $this->generateUser(($data));
                 return $user;
+                
             } 
         }
         return false;
