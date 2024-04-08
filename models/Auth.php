@@ -67,6 +67,7 @@ Class Auth{
         $newUser->password = $hash;
         $newUser->birthdate = $birthdate;
         $newUser->token = $token;
+        $newUser->avatar ='default.jpg';
 
 
         $userDao->insert($newUser);

@@ -23,9 +23,9 @@
                 </div>
                 <div class="head-side-right">
                     <a href="<?=$base?>/perfil.php" class="user-area">
-                        <div class="user-area-text">Bonieky</div>
+                        <div class="user-area-text"><?=  $userInfo->name;?></div>
                         <div class="user-area-icon">
-                            <img src="<?=$base;?>/media/avatars/avatar.jpg" />
+                            <img src="<?=$base;?>/media/avatars/<?=$userInfo->avatar;?>" />
                         </div>
                     </a>
                     <a href="<?=$base?>/logout.php" class="user-logout">
