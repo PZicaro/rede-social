@@ -19,7 +19,7 @@
             $u->birthdate = $array['birthdate'] ?? '';
             $u->city = $array['city']?? '';
             $u-> work = $array['work'] ?? '';
-            $u->avatar = $array['avatar'] ?? '';
+            $u->avatar = $array['avatar'] ?? 'default.jpg';
             $u->cover = $array['cover'] ?? '';
             $u->token = $array['token'] ?? '';
 
