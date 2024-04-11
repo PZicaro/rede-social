@@ -88,9 +88,9 @@
     }
     public function insert(User $u){
         $sql = $this->pdo->prepare("INSERT INTO users
-       (email, password, name, birthdate, token)
+       (email, password, name, birthdate, token, avatar)
         VALUES (
-            :email, :password, :name, :birthdate, :token
+            :email, :password, :name, :birthdate, :token, :avatar
         )
          ");
         $sql->bindValue(':email', $u->email);
@@ -98,6 +98,7 @@
         $sql->bindValue(':name', $u->name);
         $sql->bindValue(':birthdate', $u->birthdate);
         $sql->bindValue(':token', $u->token);
+        $sql->bindValue(':avatar', 'default.jpg');
         $sql->execute();
 
     }
