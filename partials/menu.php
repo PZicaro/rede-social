@@ -1,7 +1,7 @@
-<aside class="mt-10">
+        <aside class="mt-10">
             <nav>
-                <a href="<?=$base;?>">
-                    <div class="menu-item <?=$activeMenu == 'home' ? 'active' : ''?>">
+                <a href="<?=$base;?>/home.php">
+                    <div class="menu-item active">
                         <div class="menu-item-icon">
                             <img src="<?=$base;?>/assets/images/home-run.png" width="16" height="16" />
                         </div>
@@ -11,9 +11,9 @@
                     </div>
                 </a>
                 <a href="<?=$base;?>/perfil.php">
-                    <div class="menu-item <?=$activeMenu == 'perfil' ? 'active' : ''?>">
+                    <div class="menu-item">
                         <div class="menu-item-icon">
-                            <img src="assets/images/user.png" width="16" height="16" />
+                            <img src="<?=$base;?>/assets/images/user.png" width="16" height="16" />
                         </div>
                         <div class="menu-item-text">
                             Meu Perfil
@@ -21,7 +21,7 @@
                     </div>
                 </a>
                 <a href="<?=$base;?>/amigos.php">
-                    <div class="menu-item <?=$activeMenu == 'amigos' ? 'active' : ''?>">
+                    <div class="menu-item">
                         <div class="menu-item-icon">
                             <img src="<?=$base;?>/assets/images/friends.png" width="16" height="16" />
                         </div>
@@ -34,7 +34,7 @@
                     </div>
                 </a>
                 <a href="<?=$base;?>/fotos.php">
-                    <div class="menu-item <?=$activeMenu == 'fotos' ? 'active' : ''?>">
+                    <div class="menu-item">
                         <div class="menu-item-icon">
                             <img src="<?=$base;?>/assets/images/photo.png" width="16" height="16" />
                         </div>
@@ -44,8 +44,8 @@
                     </div>
                 </a>
                 <div class="menu-splitter"></div>
-                <a href="<?=$base;?>/config.php">
-                    <div class="menu-item <?=$activeMenu == 'config' ? 'active' : ''?>">
+                <a href="<?=$base;?>/configuracoes.php">
+                    <div class="menu-item">
                         <div class="menu-item-icon">
                             <img src="<?=$base;?>/assets/images/settings.png" width="16" height="16" />
                         </div>
@@ -54,10 +54,10 @@
                         </div>
                     </div>
                 </a>
-                <a href="">
+                <a href="<?=$base;?>/logout.php">
                     <div class="menu-item">
                         <div class="menu-item-icon">
-                            <img src="assets/images/power.png" width="16" height="16" />
+                            <img src="<?=$base;?>/assets/images/power.png" width="16" height="16" />
                         </div>
                         <div class="menu-item-text">
                             Sair
