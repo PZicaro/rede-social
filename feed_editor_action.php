@@ -1,6 +1,7 @@
 <?php
 require('./config.php');
 require('./models/Auth.php');
+require('./dao/PostDaoMysql.php');
 $auth = new Auth($pdo, $base);
 $userInfo = $auth->checkToken();
 $activeMenu = 'home';

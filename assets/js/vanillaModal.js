@@ -242,6 +242,7 @@ var VanillaModal = (function () {
       value: function CloseModal() {
         this._removeOpenId(this.$.page);
         this._releaseNode();
+        this._removeEventListeners();
         this.isOpen = false;
         this.current = null;
         if (typeof this.$$.onClose === "function") this.$$.onClose.call(this);
@@ -387,16 +388,21 @@ var VanillaModal = (function () {
           document.addEventListener("click", _delegateClose);
         };
 
-        this.destroy = function () {
-          this.close();
+        var remove = function () {
           this.$.modal.removeEventListener("click", _outsideClickHandler);
           document.removeEventListener("keydown", _closeKeyHandler);
           document.removeEventListener("click", _delegateOpen);
           document.removeEventListener("click", _delegateClose);
         };
 
+        this.destroy = function () {
+          this.close();
+          remove();
+        };
+
         return {
-          add: add.bind(this)
+          add: add.bind(this),
+          remove: remove.bind(this)
         };
       },
       writable: true,
@@ -419,5 +425,3 @@ var VanillaModal = (function () {
     window.VanillaModal = VanillaModal;
   }
 })();
-
-var modal = new VanillaModal();
