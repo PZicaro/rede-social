@@ -5,8 +5,13 @@ $auth = new Auth($pdo, $base);
 $userInfo = $auth->checkToken();
 $activeMenu = 'home';
 
+$firstName = current(explode(' ', $userInfo->name ));
+
+
 require('./partials/header.php');
 require('./partials/menu.php');
+
+
 
 ?>
  

@@ -1,7 +1,4 @@
 
-<?php 
-$firstName = current(explode(' ', $userInfo->name ));
-?>
 <!DOCTYPE html>
 <html>
 <head>
