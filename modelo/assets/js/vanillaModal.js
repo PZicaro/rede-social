@@ -419,4 +419,3 @@ var VanillaModal = (function () {
     window.VanillaModal = VanillaModal;
   }
 })();
-
