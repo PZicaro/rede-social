@@ -1,14 +1,12 @@
 <?php
 require('./config.php');
 require('./models/Auth.php');
-require('./dao/UserRelationDaoMySql.php');
 $auth = new Auth($pdo, $base);
 $userInfo = $auth->checkToken();
 $activeMenu = 'home';
 
-$urDao = new UserRelationDaoMySql($pdo);
-$userList = $urDao->getRelationsFrom($userInfo->id);
 
+$postDao = new PostDaoMysql($pdo);
 
 $firstName = current(explode(' ', $userInfo->name ));
 
