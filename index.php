@@ -23,7 +23,24 @@ require('./partials/menu.php');
  
   
         <section class="feed mt-10">
-            <?=require('./partials/feed-editor.php');?>
+        <div class="row">
+                <div class="column pr-5">
+            <?=
+            require('./partials/feed-editor.php');
+        
+            ?>
+             </div>
+
+<?php     
+   foreach($feed as $item){
+   
+    require('./partials/feed-item.php');     
+}
+?>
+
+
+
+</div>
             
                 <div class="column side pl-5">
                     <div class="box banners">

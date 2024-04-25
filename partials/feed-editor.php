@@ -1,5 +1,4 @@
-<div class="row">
-                <div class="column pr-5">
+
 
                     <div class="box feed-new">
                         <div class="box-body">
@@ -17,13 +16,7 @@
                             </form>
                             </div>
                         </div>
-                    </div>
-
-               
-                    
-
-                </div>
-
+ 
                 <script>
                     let feedInput = document.querySelector('.feed-new-input');
                     let feedSubmit = document.querySelector('.feed-new-send');

@@ -54,6 +54,7 @@ class PostDaoMysql implements PostDao{
                     }
                     //pegar informações do usuário
                     $newPost->user = $userDao->findById($post_item['id_user']);
+                  
 
                     //informações sobre Like
                     $newPost->like_count = 0;

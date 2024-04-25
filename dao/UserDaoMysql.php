@@ -104,7 +104,7 @@
     }
     public function findById($id)
     {
-        if(!empty($email)){
+        if(!empty($id)){
             $sql = $this->pdo->prepare("SELECT * FROM users WHERE id =:id");
             $sql->bindValue(':id', $id);
             $sql->execute();
