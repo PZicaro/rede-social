@@ -36,6 +36,38 @@ class PostDaoMysql implements PostDao{
     }
 
     private function _postListToObject($post_list, $id_user){
+        $posts= [];
+        $userDao = new UserDaoMysql($this->pdo);
+
+        foreach($post_list as $post_item){
+                $newPost = new Post();
+                $newPost->id = $post_item['id'];
+                $newPost->type = $post_item['type'];
+                $newPost->created_at = $post_item['created_at'];
+                $newPost->body = $post_item['body'];
+                $newPost->mine = false;
+
+                if($post_item['id'] == $id_user ){
+                $newPost->mine = true;
+
+
+                    }
+                    //pegar informações do usuário
+                    $newPost->user = $userDao->findById($post_item['id_user']);
+
+                    //informações sobre Like
+                    $newPost->like_count = 0;
+                    $newPost->liked = false;
+
+                    //informações sobre comentários
+                    $newPost->comments=[];
+
+                    $posts[] =$newPost;
+
+                   
+        }
+
+        return $posts;
 
     }
 }

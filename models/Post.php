@@ -5,6 +5,11 @@ Class Post{
     public $type;
     public $created_at ;
     public $body;
+    public $mine;
+    public $user;
+    public $like_count;
+    public $liked;
+    public $comments;
    
 
 }

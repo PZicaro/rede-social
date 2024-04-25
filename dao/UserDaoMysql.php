@@ -102,4 +102,21 @@
         $sql->execute();
 
     }
+    public function findById($id)
+    {
+        if(!empty($email)){
+            $sql = $this->pdo->prepare("SELECT * FROM users WHERE id =:id");
+            $sql->bindValue(':id', $id);
+            $sql->execute();
+
+            if($sql->rowCount()>0){
+                $data = $sql->fetch(PDO::FETCH_ASSOC);
+                $user = $this->generateUser(($data));
+                return $user;
+                
+            } 
+        }
+        return false;
+        
+    }
     }

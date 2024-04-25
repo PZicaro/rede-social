@@ -1,5 +1,6 @@
 <?php
 require('./config.php');
+require('./dao/PostDaoMysql.php');
 require('./models/Auth.php');
 $auth = new Auth($pdo, $base);
 $userInfo = $auth->checkToken();
@@ -9,6 +10,10 @@ $activeMenu = 'home';
 $postDao = new PostDaoMysql($pdo);
 
 $firstName = current(explode(' ', $userInfo->name ));
+
+$feed = $postDao->getHomeFeed($userInfo->id);
+
+
 
 
 require('./partials/header.php');
